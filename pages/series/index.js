@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Series from "./Series";
 const PARAMS = new URLSearchParams({
   apikey: process.env.NEXT_PUBLIC_MARVEL_PUBLIC_API_KEY,
   hash: process.env.NEXT_PUBLIC_HASH_CODE,
@@ -12,17 +12,20 @@ export const getStaticProps = async () => {
   const data = await res.json();
 
   return {
-    props: { comics: data.data.results },
+    props: { series: data.data.results },
   };
 };
 
-export default function Home({ comics }) {
+export default function Home({ series }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>marvComics</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main>
+        <Series series={series} />
+      </main>
     </div>
   );
 }
