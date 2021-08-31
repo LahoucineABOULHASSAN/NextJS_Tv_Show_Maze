@@ -5,18 +5,18 @@ const PARAMS = new URLSearchParams({
   hash: process.env.NEXT_PUBLIC_HASH_CODE,
   ts: 1,
 });
-const URL = `https://gateway.marvel.com:443/v1/public/series?startYear=2021&limit=99&${PARAMS}`;
+const URL = `https://api.tvmaze.com/shows`;
 
 export const getStaticProps = async () => {
   const res = await fetch(URL);
   const data = await res.json();
 
   return {
-    props: { series: data.data.results },
+    props: { shows: data.slice(0, 10) },
   };
 };
 
-export default function Home({ series }) {
+export default function Home({ shows }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -24,7 +24,7 @@ export default function Home({ series }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Series series={series} />
+        <Series shows={shows} />
       </main>
     </div>
   );

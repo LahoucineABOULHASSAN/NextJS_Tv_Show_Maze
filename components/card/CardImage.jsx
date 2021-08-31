@@ -1,12 +1,9 @@
-import CardHeader from "./CardHeader";
-
-const CardImage = () => {
+const CardImage = ({ image, url, name }) => {
   return (
     <div className="relative image-header">
-      <a href={image.largeImageURL} target="_blank">
-        <img className="w-full rounded-t-lg" src="" alt="" />
+      <a href={url} target="_blank">
+        <img className="w-full h-full rounded-t-lg" src={image} alt={name} />
       </a>
-      <CardHeader />
     </div>
   );
 };
