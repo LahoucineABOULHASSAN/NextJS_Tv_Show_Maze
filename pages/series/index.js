@@ -11,8 +11,12 @@ export const getStaticProps = async () => {
   const res = await fetch(URL);
   const data = await res.json();
 
+  const shows = data.sort((a, b) => {
+    return b.rating.average - a.rating.average;
+  });
+
   return {
-    props: { shows: data.slice(0, 10) },
+    props: { shows },
   };
 };
 

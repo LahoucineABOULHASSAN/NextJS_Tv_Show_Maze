@@ -1,21 +1,25 @@
 const CastAndCrew = ({ castandcrew }) => {
   return (
-    <div className="w-10/12 mx-auto my-8">
-      <h1 className="text-2xl text-green-500 font-bold my-4 ">
+    <div className="w-full bg-gray-300 p-8">
+      <h1 className="text-2xl text-green-700 font-semibold mb-4">
         {"Cast & Crew"}
       </h1>
-      <ul className="flex flex-row items-center justify-between flex-wrap">
+      <ul className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-7 gap-4 lg:grdi-cols-12">
         {castandcrew.map((item, index) => (
-          <li key={index} className=" mr-2">
+          <li key={index} className="flex flex-col items-center text-center">
             <a href={item.url}>
               <img
-                className="rounded-full h-24 w-24"
+                className="rounded-full h-24 w-24 mb-2"
                 src={item.character.image.medium}
                 alt={item.character.name}
               />
             </a>
-            <h2 className="text-md text-gray-600">{item.person.name}</h2>
-            <h3 className="text-sm text-gray-400">{item.character.name}</h3>
+            <h2 className="text-sm font-semibold text-gray-700">
+              {item.person.name}
+            </h2>
+            <h3 className="text-xs text-gray-500">
+              {item.character.name.split("/")[0]}
+            </h3>
           </li>
         ))}
       </ul>

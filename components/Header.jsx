@@ -24,7 +24,7 @@ const Header = () => {
     >
       <div className="header flex flex-col items-center justify-center tracking-widest w-full h-full">
         <h1 className="text-shadow-md text-4xl text-gray-400 mb-2">
-          Welcome to BixyAlbum
+          Welcome to TvMazeShow
         </h1>
         <h2 className="text-shadow-md text-2xl text-gray-400 mb-1">
           Pictures are from the{" "}
@@ -34,11 +34,11 @@ const Header = () => {
             target="_blank"
             rel="noreferror"
           >
-            Pixabay API
+            TvMaze API
           </a>
         </h2>
         <button
-          className="flex flex-row justify-center text-md font-bold tracking-widest stroke-current stroke-1 hover:bg-red-700 transition ease-in-out duration-700 rounded-2xl py-3 pr-4 pl-5 mt-4"
+          className="flex flex-row justify-center text-md font-bold tracking-widest stroke-current stroke-1 bg-green-500 hover:bg-green-700 transition ease-in-out duration-700 rounded-2xl py-3 pr-4 pl-5 mt-4"
           onClick={scroll}
         >
           Scroll Down {arrow}
