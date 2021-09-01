@@ -1,20 +1,30 @@
+import Head from "next/head";
 const Seasons = ({ name, seasons }) => {
   return (
-    <div className="w-10/12 mx-auto my-8">
-      <h1 className="text-2xl text-green-500 font-bold my-4 ">Seasons</h1>
-      <ul className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-        {seasons.map((season) => (
-          <li key={season.id}>
-            <a href={season.url}>
-              <img
-                src={season.image.original}
-                alt={`${name}-season-${season.number}`}
-              />
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>TvMazeShow | {name}</title>
+      </Head>
+      <div className="w-full p-10">
+        <h1 className="text-2xl text-green-500 font-semibold mb-4">Seasons</h1>
+        <ul className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+          {seasons.map((season, index) => (
+            <li key={index} className="relative h-auto bg-gray-800">
+              <a href={season.url}>
+                <img
+                  className="h-full bg-gray-800"
+                  src={season.image.original}
+                  alt={`${name}-season-${season.number}`}
+                />
+              </a>
+              <h2 className="absolute bottom-0 left-0 w-full text-md font-semibold text-white bg-green-500 hover:bg-green-700 cursor-default transition duration-500 ease-in-out text-center uppercase py-2">
+                Season {index + 1}
+              </h2>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

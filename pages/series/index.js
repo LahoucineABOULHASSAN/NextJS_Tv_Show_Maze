@@ -24,7 +24,7 @@ export default function Home({ shows }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>marvComics</title>
+        <title>TvMazeShow</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

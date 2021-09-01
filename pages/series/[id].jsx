@@ -42,7 +42,7 @@ const Serie = ({ show, seasons, castandcrew }) => {
   return (
     <section>
       <div>
-        <img src={image.original} alt={name} />
+        <img className="w-screen h-screen" src={image.original} alt={name} />
       </div>
       <Seasons name={name} seasons={seasons} />
       <CastAndCrew castandcrew={castandcrew} />
