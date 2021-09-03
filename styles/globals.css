@@ -11,7 +11,10 @@
 html {
   scroll-behavior: smooth;
 }
-
+main,
+section {
+  width: 100%;
+}
 /* Header style */
 header#header {
   width: 100%;
