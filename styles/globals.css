@@ -11,24 +11,7 @@
 html {
   scroll-behavior: smooth;
 }
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  width: auto;
-}
-.my-masonry-grid > div:first-child {
-  padding-left: 0;
-}
-.my-masonry-grid_column {
-  padding-left: 1rem; /* gutter size */
-  background-clip: padding-box;
-}
 
-/* Style your items */
-.my-masonry-grid_column > div {
-  margin-bottom: 1rem;
-}
 /* Header style */
 header#header {
   width: 100%;
@@ -41,30 +24,39 @@ header#header {
   -moz-background-size: cover;
   -webkit-background-size: cover;
 }
+section .show-header {
+  height: 56.25vw;
+}
+section .show-header-shadow {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+section .show-header-title {
+  height: calc(49.8% * 9 / 16);
+  background: radial-gradient(at top left, #000 0, rgba(0, 0, 0, 0) 72%);
+}
+.show-content-star {
+  width: 56px;
+  height: 56px;
+}
+.show-header-star {
+  background: linear-gradient(
+    to top,
+    transparent 20%,
+    rgba(0, 0, 0, 0.7) 100%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  height: calc(49.8% * 9 / 16);
+}
 header .header {
   background: #0000009a;
 }
-header button {
-  background: var(--red);
-}
+
 /* Footer style */
 footer {
   background: var(--red);
-}
-
-/* Image card style */
-.image-header > div {
-  transition: all 1s ease-in-out;
-}
-.image-header:hover > div {
-  display: flex;
-  animation: slide 1s ease-in-out;
-}
-@keyframes slide {
-  0% {
-    bottom: -3rem;
-  }
-  100% {
-    bottom: 0;
-  }
 }
