@@ -40,7 +40,7 @@ export const getStaticProps = async (context) => {
 const Serie = ({ show, seasons, castandcrew }) => {
   const { name, image, rating } = show;
   return (
-    <section>
+    <section id="main" className="w-full">
       <div className="w-full overflow-hidden show-header relative">
         <div className="absolute top-0 w-full show-header-title">
           <h1 className="relative text-6xl font-bold tracking-widest text-gray-400 w-full uppercase w-10/12 py-8 mx-auto">

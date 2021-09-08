@@ -1,10 +1,6 @@
 import Head from "next/head";
-import Series from "./Series";
-const PARAMS = new URLSearchParams({
-  apikey: process.env.NEXT_PUBLIC_MARVEL_PUBLIC_API_KEY,
-  hash: process.env.NEXT_PUBLIC_HASH_CODE,
-  ts: 1,
-});
+import Series from "./series/Series";
+
 const URL = `https://api.tvmaze.com/shows`;
 
 export const getStaticProps = async () => {
@@ -27,9 +23,9 @@ export default function Home({ shows }) {
         <title>TvMazeShow</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <section id="main" className="w-full">
         <Series shows={shows} />
-      </main>
+      </section>
     </div>
   );
 }
