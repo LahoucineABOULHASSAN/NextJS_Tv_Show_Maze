@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
   });
 
   return {
-    props: { shows },
+    props: { shows: shows.slice(0, 10) },
   };
 };
 

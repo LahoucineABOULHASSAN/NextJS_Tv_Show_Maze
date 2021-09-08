@@ -1,6 +1,6 @@
 const CardTags = ({ tags }) => {
   return (
-    <ul className="z-20 w-full my-2">
+    <ul className="z-20 flex flex-row flex-wrap items-center justify-center w-full my-2">
       {tags.map((tag, index) => (
         <li
           key={index}
