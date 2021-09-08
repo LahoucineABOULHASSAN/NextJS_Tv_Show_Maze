@@ -20,7 +20,7 @@ export default function Home({ shows }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
-        <title>TvMazeShow</title>
+        <title>TvMazeShow | Home Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section id="main" className="w-full">

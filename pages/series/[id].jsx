@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Seasons from "./Seasons";
 import CastAndCrew from "./CastAndCrew";
 import About from "./About";
@@ -40,29 +41,34 @@ export const getStaticProps = async (context) => {
 const Serie = ({ show, seasons, castandcrew }) => {
   const { name, image, rating } = show;
   return (
-    <section id="main" className="w-full">
-      <div className="w-full overflow-hidden show-header relative">
-        <div className="absolute top-0 w-full show-header-title">
-          <h1 className="relative text-6xl font-bold tracking-widest text-gray-400 w-full uppercase w-10/12 py-8 mx-auto">
-            {name}
-            <small className="absolute bottom-0 left-10 text-lg tracking-wide text-green-300">
-              {rating.average} <span className="text-sm">/10</span>
-            </small>
-          </h1>
+    <>
+      <Head>
+        <title>OnGames | {name}</title>
+      </Head>
+      <section id="main" className="w-full">
+        <div className="w-full overflow-hidden show-header relative">
+          <div className="absolute top-0 w-full show-header-title">
+            <h1 className="relative text-6xl font-bold tracking-widest text-gray-400 w-full uppercase w-10/12 py-8 mx-auto">
+              {name}
+              <small className="absolute bottom-0 left-10 text-lg tracking-wide text-green-300">
+                {rating.average} <span className="text-sm">/10</span>
+              </small>
+            </h1>
+          </div>
+          <img
+            height="944"
+            width="1679"
+            className="w-full h-full"
+            src={image.original}
+            alt={name}
+          />
+          <div className="absolute bottom-0 w-full h-full show-header-shadow"></div>
         </div>
-        <img
-          height="944"
-          width="1679"
-          className="w-full h-full"
-          src={image.original}
-          alt={name}
-        />
-        <div className="absolute bottom-0 w-full h-full show-header-shadow"></div>
-      </div>
-      <Seasons name={name} seasons={seasons} />
-      <CastAndCrew castandcrew={castandcrew} />
-      <About show={show} />
-    </section>
+        <Seasons name={name} seasons={seasons} />
+        <CastAndCrew castandcrew={castandcrew} />
+        <About show={show} />
+      </section>
+    </>
   );
 };
 
