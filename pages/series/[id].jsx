@@ -65,7 +65,7 @@ const Serie = ({ show, seasons, castandcrew }) => {
         </div>
         <Seasons name={show.name} seasons={seasons} />
         <CastAndCrew castandcrew={castandcrew} />
-        <About show={show.show} />
+        <About show={show} />
       </section>
     </>
   );
