@@ -1,12 +1,9 @@
 const CardHeader = ({ name, status }) => {
   return (
-    name &&
-    status && (
-      <div>
-        <h1 className="text-md">{name}</h1>
-        <h2 className="text-sm text-gray-400">{status}</h2>
-      </div>
-    )
+    <div>
+      <h1 className="text-md">{name}</h1>
+      <h2 className="text-sm text-gray-400">{status}</h2>
+    </div>
   );
 };
 
