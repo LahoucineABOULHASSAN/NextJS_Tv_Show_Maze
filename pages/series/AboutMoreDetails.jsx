@@ -1,5 +1,4 @@
 const AboutMoreDetails = ({ show }) => {
-  const { status, premiered, language, network, genres, rating } = show;
   return (
     <>
       <h2 className="text-xl text-gray-500 font-semibold my-4">More Details</h2>
@@ -10,25 +9,25 @@ const AboutMoreDetails = ({ show }) => {
             <li>
               <span className="text-sm text-gray-300 mr-4">Genre:</span>
               <small className="text-xs font-light text-gray-400">
-                {genres.map((genre) => `${genre}  `)}
+                {show.genres.map((genre) => `${genre}  `)}
               </small>
             </li>
             <li>
               <span className="text-sm text-gray-300 mr-4">Released:</span>
               <small className="text-xs font-light text-gray-400">
-                {premiered}
+                {show.premiered}
               </small>
             </li>
             <li>
               <span className="text-sm text-gray-300 mr-4">Rated:</span>
               <small className="text-xs font-light text-gray-400">
-                {rating.average}/10
+                {show.rating.average}/10
               </small>
             </li>
             <li>
               <span className="text-sm text-gray-300 mr-4">Status:</span>
               <small className="text-xs font-light text-gray-400">
-                {status}
+                {show.status}
               </small>
             </li>
           </ul>
@@ -39,19 +38,19 @@ const AboutMoreDetails = ({ show }) => {
             <li>
               <span className="text-sm text-gray-300 mr-4">Country:</span>
               <small className="text-xs font-light text-gray-400">
-                {network.country.name}
+                {show.network.country.name}
               </small>
             </li>
             <li>
               <span className="text-sm text-gray-300 mr-4">Network:</span>
               <small className="text-xs font-light text-gray-400">
-                {network.name}
+                {show.network.name}
               </small>
             </li>
             <li>
               <span className="text-sm text-gray-300 mr-4">Language:</span>
               <small className="text-xs font-light text-gray-400">
-                {language}
+                {show.language}
               </small>
             </li>
           </ul>

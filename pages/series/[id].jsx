@@ -39,19 +39,18 @@ export const getStaticProps = async (context) => {
 };
 
 const Serie = ({ show, seasons, castandcrew }) => {
-  const { name, image, rating } = show;
   return (
     <>
       <Head>
-        <title>OnGames | {name}</title>
+        <title>OnGames | {show.name}</title>
       </Head>
       <section id="main" className="w-full">
         <div className="w-full overflow-hidden show-header relative">
           <div className="absolute top-0 w-full show-header-title">
             <h1 className="relative text-6xl font-bold tracking-widest text-gray-400 w-full uppercase w-10/12 py-8 mx-auto">
-              {name}
+              {show.name}
               <small className="absolute bottom-0 left-10 text-lg tracking-wide text-green-300">
-                {rating.average} <span className="text-sm">/10</span>
+                {show.rating.average} <span className="text-sm">/10</span>
               </small>
             </h1>
           </div>
@@ -59,14 +58,14 @@ const Serie = ({ show, seasons, castandcrew }) => {
             height="944"
             width="1679"
             className="w-full h-full"
-            src={image.original}
-            alt={name}
+            src={show.image.original}
+            alt={show.name}
           />
           <div className="absolute bottom-0 w-full h-full show-header-shadow"></div>
         </div>
-        <Seasons name={name} seasons={seasons} />
+        <Seasons name={show.name} seasons={seasons} />
         <CastAndCrew castandcrew={castandcrew} />
-        <About show={show} />
+        <About show={show.show} />
       </section>
     </>
   );
