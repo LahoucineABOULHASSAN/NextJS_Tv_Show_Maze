@@ -61,7 +61,10 @@ const Serie = ({ show, seasons, castandcrew }) => {
               height="944"
               width="1679"
               className="w-full h-full"
-              src={show.image.original}
+              src={
+                show.image.original ||
+                "https://via.placeholder.com/900?text=Image+Not+Found"
+              }
               alt={show.name}
             />
             <div className="absolute bottom-0 w-full h-full show-header-shadow"></div>
