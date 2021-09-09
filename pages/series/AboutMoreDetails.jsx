@@ -43,13 +43,13 @@ const AboutMoreDetails = ({ show }) => {
               <li>
                 <span className="text-sm text-gray-300 mr-4">Country:</span>
                 <small className="text-xs font-light text-gray-400">
-                  {show.network.country.name}
+                  {(show.network && show.network.country.name) || "unknown"}
                 </small>
               </li>
               <li>
                 <span className="text-sm text-gray-300 mr-4">Network:</span>
                 <small className="text-xs font-light text-gray-400">
-                  {show.network.name}
+                  {(show.network && show.network.name) || "unknown"}
                 </small>
               </li>
               <li>
