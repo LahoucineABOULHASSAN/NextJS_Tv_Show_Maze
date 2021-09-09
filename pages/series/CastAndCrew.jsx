@@ -48,28 +48,31 @@ const CastAndCrew = ({ castandcrew }) => {
       <h1 className="text-2xl text-green-700 font-semibold mb-4">
         {"Cast & Crew"}
       </h1>
-      <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:grdi-cols-12">
-        {data.map((item, index) => (
-          <li key={index} className="flex flex-col items-center text-center">
-            <a href={item.character.url}>
-              <img
-                className="rounded-full h-32 w-32 mb-2"
-                src={
-                  (item.character.image && item.character.image.original) ||
-                  "https://via.placeholder.com/900?text=Image+Not+Found"
-                }
-                alt={item.character.name}
-              />
-            </a>
-            <h2 className="text-sm font-semibold text-gray-700">
-              {item.person.name}
-            </h2>
-            <h3 className="text-xs text-gray-500">
-              {item.character.name.split("/")[0]}
-            </h3>
-          </li>
-        ))}
-      </ul>
+      {data && (
+        <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:grdi-cols-12">
+          {data.map((item, index) => (
+            <li key={index} className="flex flex-col items-center text-center">
+              <a href={item.character.url}>
+                <img
+                  className="rounded-full h-32 w-32 mb-2"
+                  src={
+                    (item.character.image && item.character.image.original) ||
+                    "https://via.placeholder.com/900?text=Image+Not+Found"
+                  }
+                  alt={item.character.name}
+                />
+              </a>
+              <h2 className="text-sm font-semibold text-gray-700">
+                {item.person.name}
+              </h2>
+              <h3 className="text-xs text-gray-500">
+                {item.character.name.split("/")[0]}
+              </h3>
+            </li>
+          ))}
+        </ul>
+      )}
+
       <div className="flex justify-end items-center w-full border-t border-gray-400 border-solid py-2 mt-8">
         <button className="" onClick={() => setShowAll(!showAll)}>
           {showAll ? down : up}
