@@ -42,35 +42,37 @@ const CastAndCrew = ({ castandcrew }) => {
   const [showAll, setShowAll] = useState(true);
   const data = showAll ? castandcrew.slice(0, 5) : castandcrew;
   return (
-    <div className="w-full bg-gray-300 p-10">
-      <h1 className="text-2xl text-green-700 font-semibold mb-4">
-        {"Cast & Crew"}
-      </h1>
-      <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:grdi-cols-12">
-        {data.map((item, index) => (
-          <li key={index} className="flex flex-col items-center text-center">
-            <a href={item.url}>
-              <img
-                className="rounded-full h-32 w-32 mb-2"
-                src={item.character.image.medium}
-                alt={item.character.name}
-              />
-            </a>
-            <h2 className="text-sm font-semibold text-gray-700">
-              {item.person.name}
-            </h2>
-            <h3 className="text-xs text-gray-500">
-              {item.character.name.split("/")[0]}
-            </h3>
-          </li>
-        ))}
-      </ul>
-      <div className="flex justify-end items-center w-full border-t border-gray-400 border-solid py-2 mt-8">
-        <button className="" onClick={() => setShowAll(!showAll)}>
-          {showAll ? down : up}
-        </button>
+    castandcrew && (
+      <div className="w-full bg-gray-300 p-10">
+        <h1 className="text-2xl text-green-700 font-semibold mb-4">
+          {"Cast & Crew"}
+        </h1>
+        <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:grdi-cols-12">
+          {data.map((item, index) => (
+            <li key={index} className="flex flex-col items-center text-center">
+              <a href={item.url}>
+                <img
+                  className="rounded-full h-32 w-32 mb-2"
+                  src={item.character.image.medium}
+                  alt={item.character.name}
+                />
+              </a>
+              <h2 className="text-sm font-semibold text-gray-700">
+                {item.person.name}
+              </h2>
+              <h3 className="text-xs text-gray-500">
+                {item.character.name.split("/")[0]}
+              </h3>
+            </li>
+          ))}
+        </ul>
+        <div className="flex justify-end items-center w-full border-t border-gray-400 border-solid py-2 mt-8">
+          <button className="" onClick={() => setShowAll(!showAll)}>
+            {showAll ? down : up}
+          </button>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
