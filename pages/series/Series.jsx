@@ -33,13 +33,11 @@ const Series = ({ shows }) => {
     </div>
   );
 
-  const data =
-    shows &&
-    shows
-      .filter((elem) => {
-        return elem.name.toLowerCase().includes(search);
-      })
-      .map((show) => <Card show={show} key={show.id} />);
+  const data = shows
+    .filter((elem) => {
+      return elem.name.toLowerCase().includes(search);
+    })
+    .map((show) => <Card show={show} key={show.id} />);
 
   return (
     <section>
