@@ -40,7 +40,7 @@ const down = (
 
 const CastAndCrew = ({ castandcrew }) => {
   const [showAll, setShowAll] = useState(true);
-  const data = showAll ? castandcrew.slice(0, 5) : castandcrew;
+  const data = castandcrew && (showAll ? castandcrew.slice(0, 5) : castandcrew);
   return (
     castandcrew && (
       <div className="w-full bg-gray-300 p-10">
