@@ -40,7 +40,9 @@ const down = (
 
 const CastAndCrew = ({ castandcrew }) => {
   const [showAll, setShowAll] = useState(true);
+
   const data = castandcrew && (showAll ? castandcrew.slice(0, 5) : castandcrew);
+
   return (
     castandcrew && (
       <div className="w-full bg-gray-300 p-10">
@@ -50,10 +52,13 @@ const CastAndCrew = ({ castandcrew }) => {
         <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:grdi-cols-12">
           {data.map((item, index) => (
             <li key={index} className="flex flex-col items-center text-center">
-              <a href={item.url}>
+              <a href={item.character.url}>
                 <img
                   className="rounded-full h-32 w-32 mb-2"
-                  src={item.character.image.medium}
+                  src={
+                    (item.character.image && item.character.image.original) ||
+                    "https://via.placeholder.com/900?text=Image+Not+Found"
+                  }
                   alt={item.character.name}
                 />
               </a>

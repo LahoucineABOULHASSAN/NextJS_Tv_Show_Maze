@@ -14,7 +14,7 @@ const AboutMoreDetails = ({ show }) => {
               <li>
                 <span className="text-sm text-gray-300 mr-4">Genre:</span>
                 <small className="text-xs font-light text-gray-400">
-                  {show.genres.map((genre) => `${genre}  `)}
+                  {show.genres && show.genres.map((genre) => `${genre}  `)}
                 </small>
               </li>
               <li>

@@ -10,7 +10,10 @@ const Card = ({ show }) => {
           <>
             <CardImage
               name={show.name}
-              image={show.image.original}
+              image={
+                (show.image && show.image.original) ||
+                "https://via.placeholder.com/900?text=Image+Not+Found"
+              }
               url={`/series/${show.id}`}
               rating={show.rating.average}
             />

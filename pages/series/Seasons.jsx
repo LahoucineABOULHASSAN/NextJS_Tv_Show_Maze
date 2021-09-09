@@ -17,7 +17,10 @@ const Seasons = ({ name, seasons }) => {
                 <a href={season.url}>
                   <img
                     className="h-full bg-gray-800"
-                    src={season.image.original}
+                    src={
+                      (season.image && season.image.original) ||
+                      "https://via.placeholder.com/900?text=Image+Not+Found"
+                    }
                     alt={`${name}-season-${season.number}`}
                   />
                 </a>
