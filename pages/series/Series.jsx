@@ -42,19 +42,17 @@ const Series = ({ shows }) => {
       .map((show) => <Card show={show} key={show.id} />);
 
   return (
-    shows && (
-      <section>
-        <SearchForm handleFilter={handleFilter} />
-        {!data.length && alert}
-        {shows ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 w-10/12 my-12 mx-auto">
-            {data.length ? data : null}
-          </div>
-        ) : (
-          loading
-        )}
-      </section>
-    )
+    <section>
+      <SearchForm handleFilter={handleFilter} />
+      {!data.length && alert}
+      {shows ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 w-10/12 my-12 mx-auto">
+          {data.length ? data : null}
+        </div>
+      ) : (
+        loading
+      )}
+    </section>
   );
 };
 
