@@ -9,7 +9,7 @@ const AboutDetails = ({ show }) => {
             {show.name}
           </h3>
           <h4 className="mb-4">{show.status}</h4>
-          <p className="text-justify leading-6">{parse(show.summary)}</p>
+          <div className="text-justify leading-6">{parse(show.summary)}</div>
         </div>
       )}
     </>

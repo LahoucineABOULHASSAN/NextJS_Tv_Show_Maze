@@ -47,13 +47,13 @@ const Serie = ({ show, seasons, castandcrew }) => {
       </Head>
       <section id="main" className="w-full">
         <div className="w-full overflow-hidden show-header relative">
-          <div className="absolute top-0 w-full show-header-title">
-            <h1 className="relative text-6xl font-bold tracking-widest text-gray-400 w-full uppercase w-10/12 py-8 mx-auto">
+          <div className="absolute top-0 w-full p-1 md:p-8 show-header-title text-left">
+            <h1 className="relative text-2xl md:text-4xl lg:text-6xl font-bold tracking-widest text-gray-400 w-full uppercase">
               {name}
-              <small className="absolute bottom-0 left-10 text-lg tracking-wide text-green-300">
-                {rating.average} <span className="text-sm">/10</span>
-              </small>
             </h1>
+            <h6 className="ml-5 text-md md:text-lg tracking-wide text-green-400">
+              {rating.average} <span className="text-sm">/10</span>
+            </h6>
           </div>
           <img
             height="944"

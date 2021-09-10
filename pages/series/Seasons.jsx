@@ -5,7 +5,7 @@ const Seasons = ({ name, seasons }) => {
       <Head>
         <title>TvMazeShow | {name}</title>
       </Head>
-      <div className="w-full p-10">
+      <div className="w-full p-4 md:p-10">
         <h1 className="text-2xl text-green-500 font-semibold mb-4">Seasons</h1>
         {seasons && (
           <ul className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">

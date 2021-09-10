@@ -40,7 +40,7 @@ section .show-header-shadow {
 }
 section .show-header-title {
   height: calc(49.8% * 9 / 16);
-  background: radial-gradient(at top left, #000 0, rgba(0, 0, 0, 0) 72%);
+  background: radial-gradient(at top left, #000000e3 30%, transparent 80%);
 }
 .show-content-star {
   width: 56px;

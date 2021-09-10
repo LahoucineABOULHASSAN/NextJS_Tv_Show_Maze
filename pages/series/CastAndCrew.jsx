@@ -44,7 +44,7 @@ const CastAndCrew = ({ castandcrew }) => {
   const data = castandcrew && (showAll ? castandcrew.slice(0, 5) : castandcrew);
 
   return (
-    <div className="w-full bg-gray-300 p-10">
+    <div className="w-full bg-gray-300 p-4 md:p-10">
       <h1 className="text-2xl text-green-700 font-semibold mb-4">
         {"Cast & Crew"}
       </h1>
@@ -54,7 +54,7 @@ const CastAndCrew = ({ castandcrew }) => {
             <li key={index} className="flex flex-col items-center text-center">
               <a href={item.character.url}>
                 <img
-                  className="rounded-full h-32 w-32 mb-2"
+                  className="rounded-full h-24 md:h-32 lg:h-48 w-24 md:w-32 lg:w-48 mb-2"
                   src={
                     (item.character.image && item.character.image.original) ||
                     "https://via.placeholder.com/900?text=Image+Not+Found"
